@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="673.23" height="318.9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <title>Floor plan of Buda castle</title>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Floor plan of Buda castle</dc:title>
+    <dc:date>20131210</dc:date>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Göran Jönsson</dc:title>
+     </cc:Agent>
+    </dc:creator>
+    <dc:rights>
+     <cc:Agent>
+      <dc:title>Göran Jönsson</dc:title>
+     </cc:Agent>
+    </dc:rights>
+    <dc:publisher>
+     <cc:Agent>
+      <dc:title>Göran Jönsson</dc:title>
+     </cc:Agent>
+    </dc:publisher>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"/>
+    <dc:identifier>Floor plans of Buda Castle</dc:identifier>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <g>
+  <rect width="673.23" height="318.9" rx="12" ry="12" style="-inkscape-stroke:none;fill-opacity:.71;fill-rule:evenodd;fill:#ffffff;font-variation-settings:normal;stop-color:#000000"/>
+ </g>
+ <g transform="translate(0 -38.976)">
+  <path d="m12.88 91.5v100.75h95.969v-69.781h26.5v-30.969h-26.5-2.5938z" style="color:#000000;fill:#8214a0;stroke-linejoin:round;stroke-width:.88583;stroke:#595959" name='Квартира №1'/>
+  <path d="m174.44 48.062v6.8438h-39.094v67.562h14.531v15.562h91.875v-15.562h13.594 8.375 20.719v-37.25h-20.719v-30.312h-38.625v-6.8438z" style="color:#000000;fill:#00a0fa;stroke-linejoin:round;stroke-width:.88583;stroke:#595959" name='Квартира №5'/>
+  <path d="m537.5 93.406v28.7h22.406v69.434h98.969v-69.434-11.449-17.251z" style="color:#000000;fill:#fa7850;stroke-linejoin:round;stroke-width:.88583;stroke:#595959" name='Квартира №2'/>
+  <path d="m317.38 75.688v5.75h-4.4375v3.7812h-28.5v106.34h73.094 9.7812 19.312v-106.34h-19.312-7.75v-3.7812h-4.4375v-5.75z" style="color:#000000;fill:#fa78fa;stroke-linejoin:round;stroke-width:.88583;stroke:#595959" name='Квартира №3'/>
+  <path d="m448.09 48.062v6.8438h-39.125v30.312h-22.344v37.25h29.094 14.906v9.7188h26.219v3.2188h34.125v-3.2188h26.219v-9.7188h11.938 8.375v-37.25-30.312h-38.875v-6.8438z" style="color:#000000;fill:#aa0a3c;stroke-linejoin:round;stroke-width:.88583;stroke:#595959" name='Кладовая №1'/>
+  <path d="m357.47 191.56v37h-2.5938v117.16h2.5938 26.469 2.5938v-4.0938h50.5v3.2812h11.875v5.4062h48.375v-5.4062h11.875v-3.2812h50.844v4.0938h31.688v-117.16h-2.5938v-37h-26.5v37h-2.5938v24.5h-50.656v-10.406h-20.25v-11.594h-32v11.594h-20.281v10.406h-50.281v-24.5h-2.5938v-37z" style="color:#000000;fill:#a0fa82;stroke-linejoin:round;stroke-width:.88583;stroke:#595959" name='Квартира №4'/>
+ </g>
+ <g transform="translate(0 -38.976)">
+  <text x="11.130188" y="253.10802" style="fill:#000000;font-family:'DejaVu Sans';letter-spacing:0px;line-height:0%;word-spacing:0px" xml:space="preserve"><tspan x="11.130188" y="253.10802" style="font-family:'Liberation Sans';font-size:16px;line-height:1.25">Building A-B-C-D: Hungarian National Gallery</tspan><tspan x="11.130188" y="273.10803" style="font-family:'Liberation Sans';font-size:16px;line-height:1.25">Building E: Budapest History Museum</tspan><tspan x="11.130188" y="293.10803" style="font-family:'Liberation Sans';font-size:16px;line-height:1.25">Building F: National Széchényi Library</tspan></text>
+ </g>
+ <g transform="translate(0 -38.976)" style="display:none">
+  <text x="11.130188" y="253.10802" style="display:inline;fill:#000000;font-family:'DejaVu Sans';letter-spacing:0px;line-height:0%;word-spacing:0px" xml:space="preserve"><tspan x="11.130188" y="253.10802" style="font-family:'Liberation Sans';font-size:16px;line-height:1.25">A–B–C–D épület: Magyar Nemzeti Galéria</tspan><tspan x="11.130188" y="273.10803" style="font-family:'Liberation Sans';font-size:16px;line-height:1.25">E épület: Budapesti Történeti Múzeum</tspan><tspan x="11.130188" y="293.10803" style="font-family:'Liberation Sans';font-size:16px;line-height:1.25">F épület: Országos Széchényi Könyvtár</tspan></text>
+ </g>
+</svg>

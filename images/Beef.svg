@@ -1,0 +1,40 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон -->
+  <rect width="800" height="600" fill="#e0f7fa" />
+
+  <!-- Дороги -->
+  <line x1="400" y1="0" x2="400" y2="600" stroke="#b0bec5" stroke-width="8" />
+  <line x1="0" y1="300" x2="800" y2="300" stroke="#b0bec5" stroke-width="8" />
+
+  <!-- Бассейн -->
+  <ellipse cx="600" cy="500" rx="100" ry="50" fill="#80deea" stroke="#00796b" stroke-width="2" />
+
+  <!-- Здания -->
+  <rect x="100" y="100" width="80" height="200" fill="#ffab91" stroke="#d84315" stroke-width="3" />
+  <rect x="200" y="200" width="80" height="150" fill="#ffcc80" stroke="#ffa726" stroke-width="3" />
+  <rect x="300" y="50" width="100" height="300" fill="#a5d6a7" stroke="#388e3c" stroke-width="3" />
+  <rect x="500" y="100" width="80" height="200" fill="#90caf9" stroke="#1976d2" stroke-width="3" />
+  <rect x="700" y="150" width="70" height="250" fill="#ce93d8" stroke="#8e24aa" stroke-width="3" />
+
+  <!-- Окна для первого здания -->
+  <g fill="#fff">
+    <rect x="110" y="120" width="20" height="30" />
+    <rect x="150" y="120" width="20" height="30" />
+    <rect x="110" y="160" width="20" height="30" />
+    <rect x="150" y="160" width="20" height="30" />
+    <!-- добавить больше окон по аналогии -->
+  </g>
+
+  <!-- Деревья -->
+  <circle cx="150" cy="400" r="30" fill="#66bb6a" stroke="#2e7d32" stroke-width="2" />
+  <circle cx="250" cy="370" r="25" fill="#66bb6a" stroke="#2e7d32" stroke-width="2" />
+  <circle cx="600" cy="200" r="20" fill="#66bb6a" stroke="#2e7d32" stroke-width="2" />
+
+  <!-- Текст -->
+  <text x="400" y="50" font-family="Arial" font-size="24" fill="#004d40" text-anchor="middle">
+    Ваш Идеальный Дом
+  </text>
+  <text x="400" y="80" font-family="Arial" font-size="16" fill="#004d40" text-anchor="middle">
+    Живите Стильно и Комфортно
+  </text>
+</svg>
