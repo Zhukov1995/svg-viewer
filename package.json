@@ -2,7 +2,7 @@
   "name": "svg-library",
   "version": "1.0.0",
   "description": "",
-  "main": "test.js",
+  "main": "example.js",
   "scripts": {
     "build": "rollup -c -w"
   },

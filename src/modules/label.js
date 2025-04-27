@@ -1,4 +1,4 @@
-export default class LabelText {
+export class LabelText {
     constructor(svg) {
         this.svg = svg;
     }
@@ -7,11 +7,17 @@ export default class LabelText {
         let options = {
             show: true,
             fontSize: 14,
+            fontFamily: false,
             color: 'black'
         };
         if (data.label.hasOwnProperty('fontSize')) {
             if (typeof data.label.fontSize === 'number') {
                 options.fontSize = data.label.fontSize;
+            }
+        }
+        if (data.label.hasOwnProperty('fontFamily')) {
+            if (typeof data.label.fontFamily === 'string') {
+                options.fontFamily = data.label.fontFamily;
             }
         }
         if (data.label.hasOwnProperty('color')) {
@@ -50,6 +56,12 @@ export default class LabelText {
                 textNode.remove();
             })
         }
+        const originalTitleNodes = this.svg.querySelectorAll('title');
+        if (originalTitleNodes.length) {
+            originalTitleNodes.forEach(textNode => {
+                textNode.remove();
+            })
+        }
         const elements = this.svg.querySelectorAll('[name]');
         elements.forEach(node => {            
             let val = 0;
@@ -69,12 +81,14 @@ export default class LabelText {
             textElem.setAttribute('text-anchor', "middle");
             textElem.setAttribute('dominant-baseline', "middle");
             textElem.setAttribute('font-size', `${options.fontSize}px`);
+            textElem.setAttribute('font-family', options.fontFamily || null);
             textElem.style.fill = options.color;
-            
-            if (data.label.hasOwnProperty('formatter')) {
-                textElem.textContent = formatter(val, data.label.formatter);
-            } else {
-                textElem.textContent = val;
+            if(val !== null && val !== undefined) {
+                if (data.label.hasOwnProperty('formatter')) {
+                    textElem.textContent = formatter(val, data.label.formatter);
+                } else {
+                    textElem.textContent = val;
+                }
             }
             node.after(textElem);
         })

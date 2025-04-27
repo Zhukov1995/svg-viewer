@@ -1,4 +1,4 @@
-export default class Events {
+export class Events {
 
     registerEvents(svgNode,data) {
         const elements = svgNode.querySelectorAll('[name]');

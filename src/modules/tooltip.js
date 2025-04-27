@@ -1,13 +1,20 @@
-import { interpolateColor } from "../utils.js";
-
-export default class TooltipElement {
+export class TooltipElement {
     constructor(containerNode) {
         this.tooltip = this.createTooltip(containerNode);
     }
 
     createTooltip(containerNode) {
         const tooltip = document.createElement('div');
-        tooltip.style = 'display:none;position:absolute;padding:5px;zIndex:1000;'
+        tooltip.style.cssText = `
+            display: none;
+            position: absolute;
+            padding: 5px;
+            z-index: 1000;
+            transform: translateZ(0);
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            opacity: 0;
+            visibility: hidden;
+        `;
         containerNode.appendChild(tooltip);
         return tooltip;
     }
@@ -18,9 +25,11 @@ export default class TooltipElement {
             offset: 25,
             positionAuto: false,
             fontSize: 14,
+            fontFamily: false,
             background: false,
             color: false,
             border: false,
+            borderRadius: 0,
             padding: 0
         };
         if (data.tooltip.hasOwnProperty('position')) {
@@ -38,6 +47,11 @@ export default class TooltipElement {
                 options.fontSize = data.tooltip.fontSize;
             }
         }
+        if (data.tooltip.hasOwnProperty('fontFamily')) {
+            if (typeof data.tooltip.fontFamily === 'string') {
+                options.fontFamily = data.tooltip.fontFamily;
+            }
+        }
         if (data.tooltip.hasOwnProperty('padding')) {
             if (typeof data.tooltip.padding === 'number') {
                 options.padding = data.tooltip.padding;
@@ -52,12 +66,11 @@ export default class TooltipElement {
         if (data.tooltip.hasOwnProperty('borderColor')) {
             options.border = true;
         }
-        if (data.tooltip.hasOwnProperty('position')) {
-            if (data.tooltip.position === 'bottom') {
-                options.offset = 25;
-            } else if (data.tooltip.position === 'top') {
-                options.offset = -this.tooltip.clientHeight - 5;
+        if (data.tooltip.hasOwnProperty('borderRadius')) {
+            if (typeof data.tooltip.borderRadius === 'number') {
+                options.borderRadius = data.tooltip.borderRadius;
             }
+
         }
         if (data.tooltip.hasOwnProperty('className')) {
             this.tooltip.classList.add(data.tooltip.className);
@@ -85,26 +98,23 @@ export default class TooltipElement {
             return input
         }
 
-        const setAutoPosition = (e) => {
-            const tooltipWidth = this.tooltip.clientWidth;
-            const tooltipHeight = this.tooltip.clientHeight;
-
-            // Определяем положение мыши относительно центра
-            const isLeft = e.offsetX < svgNode.clientWidth / 2;
-            const isTop = e.offsetY < svgNode.clientHeight / 2;
-
-            // Устанавливаем горизонтальное позиционирование
-            if (isLeft) {
-                this.tooltip.style.left = e.offsetX + 15 + 'px'; // Отступ вправо
+        const setAutoPosition = (x,y) => {
+            const tooltipWidth = this.tooltip.offsetWidth;
+            const tooltipHeight = this.tooltip.offsetHeight;
+            const container = this.tooltip.parentElement;
+    
+            // Горизонтальное позиционирование
+            if (x + tooltipWidth + 15 > container.clientWidth) {
+                this.tooltip.style.left = `${x - tooltipWidth - 10}px`;
             } else {
-                this.tooltip.style.left = e.offsetX - tooltipWidth - 10 + 'px'; // Отступ влево
+                this.tooltip.style.left = `${x + 15}px`;
             }
-
-            // Устанавливаем вертикальное позиционирование
-            if (isTop) {
-                this.tooltip.style.top = e.offsetY + 25 + 'px'; // Отступ вниз
+    
+            // Вертикальное позиционирование
+            if (y + tooltipHeight + 15 > container.clientHeight) {
+                this.tooltip.style.top = `${y - tooltipHeight - 10}px`;
             } else {
-                this.tooltip.style.top = e.offsetY - tooltipHeight - 10 + 'px'; // Отступ вверх
+                this.tooltip.style.top = `${y + 15}px`;
             }
         };
 
@@ -117,14 +127,17 @@ export default class TooltipElement {
             node.addEventListener('mousemove', (e) => {
                 if(obj) {
                     this.tooltip.style.display = "block";
+                    this.tooltip.style.opacity = "1";
+                    this.tooltip.style.visibility = "visible";
                     node.style.opacity = 0.5;
                     node.style.cursor = 'pointer';
                 } else {
-                    this.tooltip.style.display = "none";
+                    this.tooltip.style.opacity = "0";
+                    this.tooltip.style.visibility = "hidden";
                 }
                 const options = this.setOptions(data);
                 if(options.positionAuto) {
-                    setAutoPosition(e);
+                    setAutoPosition(e.offsetX, e.offsetY);
                 } else {
                     this.tooltip.style.left = e.offsetX + 15 + 'px';
                     this.tooltip.style.top = e.offsetY + options.offset + 'px';
@@ -135,15 +148,24 @@ export default class TooltipElement {
                     this.tooltip.innerHTML = node.getAttribute('name');
                 }
                 this.tooltip.style.fontSize = options.fontSize + 'px';
+                this.tooltip.style.fontFamily = options.fontFamily ? options.fontFamily : null;
                 this.tooltip.style.padding = options.padding + 'px';
-                this.tooltip.style.background = options.background ? data.tooltip.background : window.getComputedStyle(node).fill;
-                this.tooltip.style.border = options.border ? `1px solid ${data.tooltip.borderColor}` : `1px solid ${window.getComputedStyle(node).fill}`;
+
+                this.tooltip.style.background = options.background ?
+                data.tooltip.background : window.getComputedStyle(node).fill;
+
+                this.tooltip.style.border = options.border ? 
+                `1px solid ${data.tooltip.borderColor}` : `1px solid ${window.getComputedStyle(node).fill}`;
+
+                this.tooltip.style.borderRadius = `${options.borderRadius}px`;
+
                 this.tooltip.style.color = options.color ? data.tooltip.color : window.getComputedStyle(node).fill;
 
             });
             node.addEventListener('mouseleave', () => {
                 node.style.opacity = 1;
-                this.tooltip.style.display = "none";
+                this.tooltip.style.opacity = "0";
+                this.tooltip.style.visibility = "hidden";
             });
         })
     }
